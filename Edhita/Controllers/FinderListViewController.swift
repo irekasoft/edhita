@@ -22,7 +22,10 @@ class FinderListViewController: EDHFinderListViewController {
     let settingsItem = Utility.barButtonItem(target: self,
                                              icon: FAKIonIcons.gearAIcon(withSize: self.kToolbarIconSize),
                                              action: #selector(settingsItemDidTap))
-    navigationItem.leftBarButtonItem = settingsItem
+    
+    
+//    navigationItem.leftBarButtonItem = settingsItem
+    
   }
   
   override func viewWillAppear(_ animated: Bool) {
