@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+
 @protocol EDHFinderListViewControllerDelegate;
 @class EDHFinderItem;
 
-@interface EDHFinderListViewController : UITableViewController
+@interface EDHFinderListViewController : UITableViewController <UIDocumentPickerDelegate>
 
 @property (nonatomic, weak) id<EDHFinderListViewControllerDelegate> listDelegate;
 @property (nonatomic) EDHFinderItem *item;

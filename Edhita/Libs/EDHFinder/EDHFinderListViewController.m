@@ -26,6 +26,7 @@ typedef NS_ENUM(NSUInteger, EDHFinderListViewControllerCreateType) {
   EDHFinderListViewControllerCreateTypeFile,
   EDHFinderListViewControllerCreateTypeDirectory,
   EDHFinderListViewControllerCreateTypeDownload,
+  EDHFinderListViewControllerCreateTypePickFromDocumentPicker,
 };
 
 @interface EDHFinderListViewController () <MGSwipeTableCellDelegate>
@@ -279,6 +280,10 @@ typedef NS_ENUM(NSUInteger, EDHFinderListViewControllerCreateType) {
     [self create:EDHFinderListViewControllerCreateTypeDownload];
   }]];
   
+  [alertController addAction:[UIAlertAction actionWithTitle:[EDHUtility localizedString:@"From Document Picker" withScope:EDHFinderPodName] style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    [self create:EDHFinderListViewControllerCreateTypePickFromDocumentPicker];
+  }]];
+  
   [alertController addAction:[UIAlertAction actionWithTitle:[EDHUtility localizedString:@"Cancel" withScope:EDHFinderPodName] style:UIAlertActionStyleCancel handler:nil]];
   
   alertController.popoverPresentationController.barButtonItem = sender;
@@ -354,6 +359,12 @@ typedef NS_ENUM(NSUInteger, EDHFinderListViewControllerCreateType) {
       placeholder = [EDHUtility localizedString:@"URL" withScope:EDHFinderPodName];
       text = @"http://";
       break;
+    case EDHFinderListViewControllerCreateTypePickFromDocumentPicker:
+      
+      [self openDocumentPicker];
+      return;
+      
+      break;
   }
   
   UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:@"" preferredStyle:UIAlertControllerStyleAlert];
@@ -408,6 +419,16 @@ typedef NS_ENUM(NSUInteger, EDHFinderListViewControllerCreateType) {
   [self presentViewController:alertController animated:YES completion:nil];
 }
 
+- (void)openDocumentPicker{
+  
+  UIDocumentPickerViewController *documentPicker = [[UIDocumentPickerViewController alloc] initWithDocumentTypes:@[@"public.image"]
+                                                                                                          inMode:UIDocumentPickerModeImport];
+  documentPicker.delegate = self;
+  documentPicker.modalPresentationStyle = UIModalPresentationFormSheet;
+  [self presentViewController:documentPicker animated:YES completion:nil];
+  
+}
+
 - (void)renameItem:(EDHFinderItem *)item atIndexPath:(NSIndexPath *)indexPath {
   
   UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[EDHUtility localizedString:@"Rename" withScope:EDHFinderPodName] message:@"" preferredStyle:UIAlertControllerStyleAlert];
@@ -457,6 +478,36 @@ typedef NS_ENUM(NSUInteger, EDHFinderListViewControllerCreateType) {
 - (void)removeItem:(EDHFinderItem *)item atIndexPath:(NSIndexPath *)indexPath {
   [self.items removeObject:item];
   [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+}
+
+#pragma mark - UIDocumentPickerDelegate
+
+- (void)documentPicker:(UIDocumentPickerViewController *)controller didPickDocumentAtURL:(NSURL *)url{
+  
+  if (controller.documentPickerMode == UIDocumentPickerModeImport) {
+    
+    NSData *imgData = [NSData dataWithContentsOfURL:url];
+    
+    bool result = [FCFileManager createFileAtPath:[NSString stringWithFormat:@"%@/",self.item.path] withContent:imgData];
+    
+//    bool result = [FCFileManager copyItemAtPath:url.path toPath:[NSString stringWithFormat:@"%@/",self.item.path]];
+    
+    NSLog(@"path %@, self.item.path/ %@",url.path, self.item.path);
+    
+    if (result == true){
+      
+      dispatch_async(dispatch_get_main_queue(), ^{
+        
+        [self loadItems];
+        
+        NSLog(@"%@",url);
+        
+      });
+
+    }
+    
+  }
+  
 }
 
 
