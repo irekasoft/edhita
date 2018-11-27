@@ -127,12 +127,12 @@
 		9B6E1E8F19E2EB2100C72D13 /* Edhita */ = {
 			isa = PBXGroup;
 			children = (
+				9B6E1E9219E2EB2100C72D13 /* AppDelegate.swift */,
 				A375ACC021AD36A100CB3ABA /* Libs */,
 				9B2E0A5F19E766E4002E9CA4 /* Assets */,
 				9B91999219E51848003751FA /* Views */,
 				9B91998F19E42827003751FA /* Models */,
 				9B6E1EBB19E35C0B00C72D13 /* Controllers */,
-				9B6E1E9219E2EB2100C72D13 /* AppDelegate.swift */,
 				9B6E1E9B19E2EB2100C72D13 /* Images.xcassets */,
 				9B6E1E9D19E2EB2100C72D13 /* LaunchScreen.xib */,
 				9B6E1E9019E2EB2100C72D13 /* Supporting Files */,
@@ -205,10 +205,10 @@
 		A375ACC821AD37B500CB3ABA /* EDHInputAccessoryView */ = {
 			isa = PBXGroup;
 			children = (
-				A375ACCB21AD37B500CB3ABA /* EDHInputAccessoryButton.h */,
-				A375ACC921AD37B500CB3ABA /* EDHInputAccessoryButton.m */,
 				A375ACCC21AD37B500CB3ABA /* EDHInputAccessoryView.h */,
 				A375ACCA21AD37B500CB3ABA /* EDHInputAccessoryView.m */,
+				A375ACCB21AD37B500CB3ABA /* EDHInputAccessoryButton.h */,
+				A375ACC921AD37B500CB3ABA /* EDHInputAccessoryButton.m */,
 			);
 			path = EDHInputAccessoryView;
 			sourceTree = "<group>";

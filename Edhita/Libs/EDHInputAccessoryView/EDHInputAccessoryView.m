@@ -33,6 +33,7 @@ static const CGFloat kIconSize = 20.0f;
     self.scrollView = [[UIScrollView alloc] initWithFrame:frame];
     self.scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     self.scrollView.delaysContentTouches = YES;
+    self.scrollView.showsHorizontalScrollIndicator = false;
 //    self.scrollView.pagingEnabled = YES;
     [self addSubview:self.scrollView];
     

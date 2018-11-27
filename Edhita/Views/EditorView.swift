@@ -43,6 +43,7 @@ class EditorView: UIView, UITextViewDelegate {
     self.textView = UITextView(frame: self.bounds)
     self.textView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     self.textView.delegate = self
+    self.textView.autocapitalizationType = .none
     self.addSubview(self.textView)
     
     self.webView = UIWebView(frame: self.bounds)

@@ -69,4 +69,5 @@ class FinderListViewController: EDHFinderListViewController {
     navController.modalPresentationStyle = .formSheet
     self.present(navController, animated: true, completion: nil)
   }
+  
 }

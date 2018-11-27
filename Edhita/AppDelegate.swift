@@ -100,7 +100,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
   func setAppearance() {
     // 118, 122, 133
     // #767a85
-    UINavigationBar.appearance().barTintColor = UIColor.coolGray()
+    UINavigationBar.appearance().barTintColor = UIColor.charcoal()
     UINavigationBar.appearance().tintColor = UIColor.white
     UINavigationBar.appearance().titleTextAttributes = [
       NSAttributedStringKey.foregroundColor: UINavigationBar.appearance().tintColor

@@ -64,7 +64,7 @@ class EditorViewController: UIViewController, EDHFinderListViewControllerDelegat
       NSLocalizedString("Dual", comment: "")
       ])
     self.modeControl.addTarget(self, action: #selector(modeControlDidChange), for: .valueChanged)
-    self.modeControl.selectedSegmentIndex = 0
+    self.modeControl.selectedSegmentIndex = 2
     
     let modeItem = UIBarButtonItem(customView: self.modeControl)
     self.navigationItem.rightBarButtonItem = modeItem
