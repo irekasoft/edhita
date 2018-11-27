@@ -69,6 +69,8 @@ class EditorViewController: UIViewController, EDHFinderListViewControllerDelegat
     let modeItem = UIBarButtonItem(customView: self.modeControl)
     self.navigationItem.rightBarButtonItem = modeItem
     
+    self.navigationItem.leftBarButtonItem = self.fullscreenItem
+    
     // Init
     self.finderItem = nil
   }

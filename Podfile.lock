@@ -3,54 +3,56 @@ PODS:
   - Colours (5.13.0):
     - Colours/ObjC (= 5.13.0)
   - Colours/ObjC (5.13.0)
-  - EDHFinder (0.1.2):
-    - EDHUtility (~> 0.1)
-    - FCFileManager (~> 1.0)
-    - FontAwesomeKit (~> 2.2)
-    - MGSwipeTableCell (~> 1.1)
   - EDHFontSelector (0.2.2):
     - EDHUtility (~> 0.1)
   - EDHUtility (0.1.2)
-  - FCFileManager (1.0.18)
-  - FontAwesomeKit (2.2.0):
-    - FontAwesomeKit/Core (= 2.2.0)
-    - FontAwesomeKit/FontAwesome (= 2.2.0)
-    - FontAwesomeKit/FoundationIcons (= 2.2.0)
-    - FontAwesomeKit/IonIcons (= 2.2.0)
-    - FontAwesomeKit/Zocial (= 2.2.0)
-  - FontAwesomeKit/Core (2.2.0)
-  - FontAwesomeKit/FontAwesome (2.2.0):
+  - FCFileManager (1.0.20)
+  - FontAwesomeKit (2.2.1):
+    - FontAwesomeKit/Core (= 2.2.1)
+    - FontAwesomeKit/FontAwesome (= 2.2.1)
+    - FontAwesomeKit/FoundationIcons (= 2.2.1)
+    - FontAwesomeKit/IonIcons (= 2.2.1)
+    - FontAwesomeKit/Material (= 2.2.1)
+    - FontAwesomeKit/Octicons (= 2.2.1)
+    - FontAwesomeKit/Zocial (= 2.2.1)
+  - FontAwesomeKit/Core (2.2.1)
+  - FontAwesomeKit/FontAwesome (2.2.1):
     - FontAwesomeKit/Core
-  - FontAwesomeKit/FoundationIcons (2.2.0):
+  - FontAwesomeKit/FoundationIcons (2.2.1):
     - FontAwesomeKit/Core
-  - FontAwesomeKit/IonIcons (2.2.0):
+  - FontAwesomeKit/IonIcons (2.2.1):
     - FontAwesomeKit/Core
-  - FontAwesomeKit/Zocial (2.2.0):
+  - FontAwesomeKit/Material (2.2.1):
+    - FontAwesomeKit/Core
+  - FontAwesomeKit/Octicons (2.2.1):
+    - FontAwesomeKit/Core
+  - FontAwesomeKit/Zocial (2.2.1):
     - FontAwesomeKit/Core
   - FXForms (1.2.3)
   - GHMarkdownParser (0.1.2)
   - github-markdown-css (0.1.0)
   - Google-Mobile-Ads-SDK (7.35.1)
   - Megrim (0.1.0)
-  - MGSwipeTableCell (1.5.6)
+  - MGSwipeTableCell (1.6.7)
   - VTAcknowledgementsViewController (0.12)
 
 DEPENDENCIES:
   - Bootstrap (from `https://raw.githubusercontent.com/tnantoka/podspecs/master/Specs/Bootstrap/Bootstrap.podspec`)
   - Colours (~> 5.13.0)
-  - EDHFinder (~> 0.1)
   - EDHFontSelector (~> 0.2.2)
+  - FCFileManager
+  - FontAwesomeKit
   - FXForms (~> 1.2)
   - GHMarkdownParser (~> 0.1)
   - github-markdown-css (from `https://raw.githubusercontent.com/tnantoka/podspecs/master/Specs/github-markdown-css/github-markdown-css.podspec`)
   - Google-Mobile-Ads-SDK
   - Megrim (from `https://raw.githubusercontent.com/tnantoka/podspecs/master/Specs/Megrim/Megrim.podspec`)
+  - MGSwipeTableCell
   - VTAcknowledgementsViewController (~> 0.12)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Colours
-    - EDHFinder
     - EDHFontSelector
     - EDHUtility
     - FCFileManager
@@ -72,19 +74,18 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Bootstrap: cbbdd0eec527ba4b52611893814ff3b7d8075a0e
   Colours: f24220c38f13deac88612667e9b4a7fb96b871d4
-  EDHFinder: 26c9daabda0a535f68db0451ae2bd4eaefad4469
   EDHFontSelector: db446999fa1bd5db9dbd3709018790d2dfc27f76
   EDHUtility: 9e888c6880f52318e6f018374adb3d15c749f4a5
-  FCFileManager: 3d13576da1f709d37460bd7669cdf07b9d6d8bc3
-  FontAwesomeKit: 025fd4dd1017fe4e3f8d47b03e024deedbb33cd4
+  FCFileManager: e0f73316e6aa2eb04d2ff4caa75fe7df1ae44270
+  FontAwesomeKit: 3614979b3dbb0ec3f7fac1bd760b91f66c31db67
   FXForms: 0fc48705d6f73ab2ca2f7aa20a858228ee6e2042
   GHMarkdownParser: 14cbf59d0ab9450017d843dffd4a3ef691e5bd77
   github-markdown-css: b6933c585e912d9c4b35a5204f1f12e18360b214
   Google-Mobile-Ads-SDK: 151d5e87b4a0ae6d7d07e2cd8d55d1b41ea2e61e
   Megrim: 8498c70aac297ca841e38e3400e45323be9cf6ef
-  MGSwipeTableCell: 616700eb0ffd1c611ba909066cb7fd739790a0a7
+  MGSwipeTableCell: fb20e983988bde2b8d0df29c2d9e1d8ffd10b74a
   VTAcknowledgementsViewController: 5ef73fca3a6179a5488a86ea99d3c7018e8e2fcb
 
-PODFILE CHECKSUM: 70c9163c01240f2faab41fbfc35dbfa279defbc0
+PODFILE CHECKSUM: cef38e45ccb1f711949efe75204d8866512b7b9d
 
 COCOAPODS: 1.5.2

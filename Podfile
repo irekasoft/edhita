@@ -4,7 +4,10 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target 'Edhita' do
 
-  pod 'EDHFinder', '~> 0.1'
+  pod 'FCFileManager'
+  pod 'FontAwesomeKit'
+  pod 'MGSwipeTableCell'
+
   pod 'EDHFontSelector', '~> 0.2.2'
   pod 'Google-Mobile-Ads-SDK'
   pod 'Colours', '~> 5.13.0'

@@ -24,6 +24,10 @@
 		9B91999419E5185C003751FA /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B91999319E5185C003751FA /* EditorView.swift */; };
 		A375ACCD21AD37B500CB3ABA /* EDHInputAccessoryButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A375ACC921AD37B500CB3ABA /* EDHInputAccessoryButton.m */; };
 		A375ACCE21AD37B500CB3ABA /* EDHInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = A375ACCA21AD37B500CB3ABA /* EDHInputAccessoryView.m */; };
+		A375ACD921AD46AF00CB3ABA /* EDHFinderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A375ACD121AD46AF00CB3ABA /* EDHFinderListViewController.m */; };
+		A375ACDA21AD46AF00CB3ABA /* EDHFinderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A375ACD221AD46AF00CB3ABA /* EDHFinderItem.m */; };
+		A375ACDB21AD46AF00CB3ABA /* EDHFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = A375ACD321AD46AF00CB3ABA /* EDHFinder.m */; };
+		A375ACDC21AD46AF00CB3ABA /* EDHFinderMoveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A375ACD421AD46AF00CB3ABA /* EDHFinderMoveViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +66,14 @@
 		A375ACCA21AD37B500CB3ABA /* EDHInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDHInputAccessoryView.m; sourceTree = "<group>"; };
 		A375ACCB21AD37B500CB3ABA /* EDHInputAccessoryButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDHInputAccessoryButton.h; sourceTree = "<group>"; };
 		A375ACCC21AD37B500CB3ABA /* EDHInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDHInputAccessoryView.h; sourceTree = "<group>"; };
+		A375ACD121AD46AF00CB3ABA /* EDHFinderListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDHFinderListViewController.m; sourceTree = "<group>"; };
+		A375ACD221AD46AF00CB3ABA /* EDHFinderItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDHFinderItem.m; sourceTree = "<group>"; };
+		A375ACD321AD46AF00CB3ABA /* EDHFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDHFinder.m; sourceTree = "<group>"; };
+		A375ACD421AD46AF00CB3ABA /* EDHFinderMoveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDHFinderMoveViewController.m; sourceTree = "<group>"; };
+		A375ACD521AD46AF00CB3ABA /* EDHFinderListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDHFinderListViewController.h; sourceTree = "<group>"; };
+		A375ACD621AD46AF00CB3ABA /* EDHFinderMoveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDHFinderMoveViewController.h; sourceTree = "<group>"; };
+		A375ACD721AD46AF00CB3ABA /* EDHFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDHFinder.h; sourceTree = "<group>"; };
+		A375ACD821AD46AF00CB3ABA /* EDHFinderItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDHFinderItem.h; sourceTree = "<group>"; };
 		C9064963BAFB1A9695BB7AC8 /* libPods-Edhita.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Edhita.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3E29EC0DAB28A9310422CC0 /* Pods-Edhita.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Edhita.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Edhita/Pods-Edhita.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -197,6 +209,7 @@
 		A375ACC021AD36A100CB3ABA /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				A375ACD021AD46AF00CB3ABA /* EDHFinder */,
 				A375ACC821AD37B500CB3ABA /* EDHInputAccessoryView */,
 			);
 			path = Libs;
@@ -211,6 +224,21 @@
 				A375ACC921AD37B500CB3ABA /* EDHInputAccessoryButton.m */,
 			);
 			path = EDHInputAccessoryView;
+			sourceTree = "<group>";
+		};
+		A375ACD021AD46AF00CB3ABA /* EDHFinder */ = {
+			isa = PBXGroup;
+			children = (
+				A375ACD521AD46AF00CB3ABA /* EDHFinderListViewController.h */,
+				A375ACD121AD46AF00CB3ABA /* EDHFinderListViewController.m */,
+				A375ACD821AD46AF00CB3ABA /* EDHFinderItem.h */,
+				A375ACD221AD46AF00CB3ABA /* EDHFinderItem.m */,
+				A375ACD721AD46AF00CB3ABA /* EDHFinder.h */,
+				A375ACD321AD46AF00CB3ABA /* EDHFinder.m */,
+				A375ACD621AD46AF00CB3ABA /* EDHFinderMoveViewController.h */,
+				A375ACD421AD46AF00CB3ABA /* EDHFinderMoveViewController.m */,
+			);
+			path = EDHFinder;
 			sourceTree = "<group>";
 		};
 		B876CAE095D50071ED5983B6 /* Frameworks */ = {
@@ -335,24 +363,26 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Edhita/Pods-Edhita-resources.sh",
-				"${PODS_ROOT}/EDHFinder/Pod/Assets/EDHFinder.bundle",
 				"${PODS_ROOT}/EDHFontSelector/Pod/Assets/EDHFontSelector.bundle",
 				"${PODS_ROOT}/EDHUtility/Pod/Assets/EDHUtility.bundle",
 				"${PODS_ROOT}/FontAwesomeKit/FontAwesomeKit/FontAwesome.otf",
 				"${PODS_ROOT}/FontAwesomeKit/FontAwesomeKit/foundation-icons.ttf",
 				"${PODS_ROOT}/FontAwesomeKit/FontAwesomeKit/ionicons.ttf",
+				"${PODS_ROOT}/FontAwesomeKit/FontAwesomeKit/Material-Design-Iconic-Font.ttf",
+				"${PODS_ROOT}/FontAwesomeKit/FontAwesomeKit/octicons.ttf",
 				"${PODS_ROOT}/FontAwesomeKit/FontAwesomeKit/zocial-regular-webfont.ttf",
 				"${PODS_ROOT}/GHMarkdownParser/discount/blocktags",
 				"${PODS_ROOT}/VTAcknowledgementsViewController/VTAcknowledgementsViewController.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EDHFinder.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EDHFontSelector.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EDHUtility.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome.otf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/foundation-icons.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ionicons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Material-Design-Iconic-Font.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/octicons.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zocial-regular-webfont.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/blocktags",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/VTAcknowledgementsViewController.bundle",
@@ -401,15 +431,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A375ACD921AD46AF00CB3ABA /* EDHFinderListViewController.m in Sources */,
 				9B2E0A5619E683CC002E9CA4 /* SettingsForm.swift in Sources */,
 				9B6E1E9319E2EB2100C72D13 /* AppDelegate.swift in Sources */,
 				9B91999419E5185C003751FA /* EditorView.swift in Sources */,
 				9B6E1EBF19E423A100C72D13 /* FinderListViewController.swift in Sources */,
 				9B4A580C2191DB2B00D780A0 /* Utility.swift in Sources */,
 				A375ACCD21AD37B500CB3ABA /* EDHInputAccessoryButton.m in Sources */,
+				A375ACDC21AD46AF00CB3ABA /* EDHFinderMoveViewController.m in Sources */,
 				9B6E1EBD19E35C2300C72D13 /* EditorViewController.swift in Sources */,
 				9B2E0A5819E6C876002E9CA4 /* SettingsViewController.swift in Sources */,
+				A375ACDA21AD46AF00CB3ABA /* EDHFinderItem.m in Sources */,
 				A375ACCE21AD37B500CB3ABA /* EDHInputAccessoryView.m in Sources */,
+				A375ACDB21AD46AF00CB3ABA /* EDHFinder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
