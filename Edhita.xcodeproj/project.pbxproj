@@ -22,6 +22,8 @@
 		9B6E1EBD19E35C2300C72D13 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6E1EBC19E35C2300C72D13 /* EditorViewController.swift */; };
 		9B6E1EBF19E423A100C72D13 /* FinderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6E1EBE19E423A100C72D13 /* FinderListViewController.swift */; };
 		9B91999419E5185C003751FA /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B91999319E5185C003751FA /* EditorView.swift */; };
+		A375ACCD21AD37B500CB3ABA /* EDHInputAccessoryButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A375ACC921AD37B500CB3ABA /* EDHInputAccessoryButton.m */; };
+		A375ACCE21AD37B500CB3ABA /* EDHInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = A375ACCA21AD37B500CB3ABA /* EDHInputAccessoryView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,10 @@
 		9B6E1EBC19E35C2300C72D13 /* EditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 		9B6E1EBE19E423A100C72D13 /* FinderListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinderListViewController.swift; sourceTree = "<group>"; };
 		9B91999319E5185C003751FA /* EditorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorView.swift; sourceTree = "<group>"; };
+		A375ACC921AD37B500CB3ABA /* EDHInputAccessoryButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDHInputAccessoryButton.m; sourceTree = "<group>"; };
+		A375ACCA21AD37B500CB3ABA /* EDHInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDHInputAccessoryView.m; sourceTree = "<group>"; };
+		A375ACCB21AD37B500CB3ABA /* EDHInputAccessoryButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDHInputAccessoryButton.h; sourceTree = "<group>"; };
+		A375ACCC21AD37B500CB3ABA /* EDHInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDHInputAccessoryView.h; sourceTree = "<group>"; };
 		C9064963BAFB1A9695BB7AC8 /* libPods-Edhita.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Edhita.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3E29EC0DAB28A9310422CC0 /* Pods-Edhita.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Edhita.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Edhita/Pods-Edhita.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,6 +127,7 @@
 		9B6E1E8F19E2EB2100C72D13 /* Edhita */ = {
 			isa = PBXGroup;
 			children = (
+				A375ACC021AD36A100CB3ABA /* Libs */,
 				9B2E0A5F19E766E4002E9CA4 /* Assets */,
 				9B91999219E51848003751FA /* Views */,
 				9B91998F19E42827003751FA /* Models */,
@@ -185,6 +192,25 @@
 				9B91999319E5185C003751FA /* EditorView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A375ACC021AD36A100CB3ABA /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				A375ACC821AD37B500CB3ABA /* EDHInputAccessoryView */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		A375ACC821AD37B500CB3ABA /* EDHInputAccessoryView */ = {
+			isa = PBXGroup;
+			children = (
+				A375ACCB21AD37B500CB3ABA /* EDHInputAccessoryButton.h */,
+				A375ACC921AD37B500CB3ABA /* EDHInputAccessoryButton.m */,
+				A375ACCC21AD37B500CB3ABA /* EDHInputAccessoryView.h */,
+				A375ACCA21AD37B500CB3ABA /* EDHInputAccessoryView.m */,
+			);
+			path = EDHInputAccessoryView;
 			sourceTree = "<group>";
 		};
 		B876CAE095D50071ED5983B6 /* Frameworks */ = {
@@ -365,7 +391,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
+			shellScript = "
+";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -379,8 +406,10 @@
 				9B91999419E5185C003751FA /* EditorView.swift in Sources */,
 				9B6E1EBF19E423A100C72D13 /* FinderListViewController.swift in Sources */,
 				9B4A580C2191DB2B00D780A0 /* Utility.swift in Sources */,
+				A375ACCD21AD37B500CB3ABA /* EDHInputAccessoryButton.m in Sources */,
 				9B6E1EBD19E35C2300C72D13 /* EditorViewController.swift in Sources */,
 				9B2E0A5819E6C876002E9CA4 /* SettingsViewController.swift in Sources */,
+				A375ACCE21AD37B500CB3ABA /* EDHInputAccessoryView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

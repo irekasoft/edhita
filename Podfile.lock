@@ -10,9 +10,6 @@ PODS:
     - MGSwipeTableCell (~> 1.1)
   - EDHFontSelector (0.2.2):
     - EDHUtility (~> 0.1)
-  - EDHInputAccessoryView (0.1.0):
-    - EDHUtility (~> 0.1)
-    - FontAwesomeKit (~> 2.1)
   - EDHUtility (0.1.2)
   - FCFileManager (1.0.18)
   - FontAwesomeKit (2.2.0):
@@ -36,7 +33,6 @@ PODS:
   - Google-Mobile-Ads-SDK (7.35.1)
   - Megrim (0.1.0)
   - MGSwipeTableCell (1.5.6)
-  - SwiftLint (0.27.0)
   - VTAcknowledgementsViewController (0.12)
 
 DEPENDENCIES:
@@ -44,13 +40,11 @@ DEPENDENCIES:
   - Colours (~> 5.13.0)
   - EDHFinder (~> 0.1)
   - EDHFontSelector (~> 0.2.2)
-  - EDHInputAccessoryView (~> 0.1)
   - FXForms (~> 1.2)
   - GHMarkdownParser (~> 0.1)
   - github-markdown-css (from `https://raw.githubusercontent.com/tnantoka/podspecs/master/Specs/github-markdown-css/github-markdown-css.podspec`)
   - Google-Mobile-Ads-SDK
   - Megrim (from `https://raw.githubusercontent.com/tnantoka/podspecs/master/Specs/Megrim/Megrim.podspec`)
-  - SwiftLint
   - VTAcknowledgementsViewController (~> 0.12)
 
 SPEC REPOS:
@@ -58,7 +52,6 @@ SPEC REPOS:
     - Colours
     - EDHFinder
     - EDHFontSelector
-    - EDHInputAccessoryView
     - EDHUtility
     - FCFileManager
     - FontAwesomeKit
@@ -66,7 +59,6 @@ SPEC REPOS:
     - GHMarkdownParser
     - Google-Mobile-Ads-SDK
     - MGSwipeTableCell
-    - SwiftLint
     - VTAcknowledgementsViewController
 
 EXTERNAL SOURCES:
@@ -82,7 +74,6 @@ SPEC CHECKSUMS:
   Colours: f24220c38f13deac88612667e9b4a7fb96b871d4
   EDHFinder: 26c9daabda0a535f68db0451ae2bd4eaefad4469
   EDHFontSelector: db446999fa1bd5db9dbd3709018790d2dfc27f76
-  EDHInputAccessoryView: 0b70c3c7aa3143ddc03e3441a2f7d5de3b65b931
   EDHUtility: 9e888c6880f52318e6f018374adb3d15c749f4a5
   FCFileManager: 3d13576da1f709d37460bd7669cdf07b9d6d8bc3
   FontAwesomeKit: 025fd4dd1017fe4e3f8d47b03e024deedbb33cd4
@@ -92,9 +83,8 @@ SPEC CHECKSUMS:
   Google-Mobile-Ads-SDK: 151d5e87b4a0ae6d7d07e2cd8d55d1b41ea2e61e
   Megrim: 8498c70aac297ca841e38e3400e45323be9cf6ef
   MGSwipeTableCell: 616700eb0ffd1c611ba909066cb7fd739790a0a7
-  SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
   VTAcknowledgementsViewController: 5ef73fca3a6179a5488a86ea99d3c7018e8e2fcb
 
-PODFILE CHECKSUM: fd22b4be12cfe66cb282ef5ef737fcdcc3c65781
+PODFILE CHECKSUM: 70c9163c01240f2faab41fbfc35dbfa279defbc0
 
 COCOAPODS: 1.5.2
