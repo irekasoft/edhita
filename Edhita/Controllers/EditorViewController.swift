@@ -12,7 +12,7 @@ import MessageUI
 class EditorViewController: UIViewController, EDHFinderListViewControllerDelegate, MFMailComposeViewControllerDelegate {
   
   let toolbarIconSize: CGFloat = 30.0
-  
+  let kToolbarIconSize: CGFloat = 26.0
   var fullscreenItem: UIBarButtonItem!
   var reloadItem: UIBarButtonItem!
   var shareItem: UIBarButtonItem!
@@ -47,8 +47,11 @@ class EditorViewController: UIViewController, EDHFinderListViewControllerDelegat
     self.countItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     let flexibleItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
     
+    let settingsItem = Utility.barButtonItem(target: self,
+                                             icon: FAKIonIcons.gearAIcon(withSize: self.kToolbarIconSize),
+                                             action: #selector(settingsItemDidTap))
+    
     self.toolbarItems = [
-      self.fullscreenItem,
       flexibleItem,
       self.reloadItem,
       flexibleItem,
@@ -67,9 +70,8 @@ class EditorViewController: UIViewController, EDHFinderListViewControllerDelegat
     self.modeControl.selectedSegmentIndex = 2
     
     let modeItem = UIBarButtonItem(customView: self.modeControl)
-    self.navigationItem.rightBarButtonItem = modeItem
+    self.navigationItem.rightBarButtonItems = [self.fullscreenItem, settingsItem, modeItem]
     
-    self.navigationItem.leftBarButtonItem = self.fullscreenItem
     
     // Init
     self.finderItem = nil
@@ -132,7 +134,7 @@ class EditorViewController: UIViewController, EDHFinderListViewControllerDelegat
   @objc func shareItemDidTap(_ sender: AnyObject) {
     let alertController = UIAlertController(
       title: NSLocalizedString("Share", comment: ""),
-      message: "",
+      message:nil,
       preferredStyle: .actionSheet)
     
     alertController.addAction(UIAlertAction(
@@ -222,17 +224,32 @@ class EditorViewController: UIViewController, EDHFinderListViewControllerDelegat
   }
   
   func listViewController(_ controller: EDHFinderListViewController!, didSelectFile item: EDHFinderItem!) {
+    
+    if (item.name.components(separatedBy: ".").last == "scn"){
+      print("open scn file")
+      
+      let sceneKitPreviewViewController = SceneKitPreviewViewController()
+      sceneKitPreviewViewController.documentDirectoryPath = item.path
+      present(sceneKitPreviewViewController, animated: true, completion: nil)
+      
+      return
+      
+    }
+    
     self.finderItem = item
     
     // Show editor controller on compact devise
     if let appDelegate = UIApplication.shared.delegate as? AppDelegate, appDelegate.splitController.isCollapsed {
+      
       // FIXME: Unbalanced calls to begin/end appearance transitions for <UINavigationController: >.
+      
       if let navigationController = self.navigationController {
         appDelegate.splitController.showDetailViewController(navigationController, sender: nil)
       }
       
       // Need navigation controller for landscape on iPhone 6 Plus
       // appDelegate.splitController.showDetailViewController(self, sender: nil)
+    
     }
   }
   
@@ -258,6 +275,7 @@ class EditorViewController: UIViewController, EDHFinderListViewControllerDelegat
   }
   
   func keyboardWillChangeFrameWithNotification(_ notification: Notification, showsKeyboard: Bool) {
+    
     let userInfo = (notification as NSNotification).userInfo!
     let durationInfo = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber) ?? NSNumber()
     let animationDuration: TimeInterval = durationInfo.doubleValue
@@ -286,13 +304,14 @@ class EditorViewController: UIViewController, EDHFinderListViewControllerDelegat
   // MARK: - Utilities
   
   func configureView() {
+    
     if let item = self.finderItem {
-      self.title = item.name
       
+      self.title = item.name
       self.shareItem.isEnabled = true
+      
     } else {
       self.title = NSLocalizedString("Edhita", comment: "")
-      
       self.shareItem.isEnabled = false
     }
     self.editorView.finderItem = self.finderItem
@@ -320,4 +339,6 @@ class EditorViewController: UIViewController, EDHFinderListViewControllerDelegat
   func updateCountItem() {
     countItem.title = String(format: NSLocalizedString("Chars: %d", comment: ""), editorView.count)
   }
+  
+  
 }

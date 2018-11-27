@@ -16,6 +16,7 @@
 #import <FontAwesomeKit/FontAwesomeKit.h>
 #import "MGSwipeTableCell.h"
 #import "MGSwipeButton.h"
+#import "SSZipArchive.h"
 
 static NSString * const reuseIdentifier = @"reuseIdentifier";
 
@@ -90,8 +91,11 @@ typedef NS_ENUM(NSUInteger, EDHFinderListViewControllerCreateType) {
   [super viewWillDisappear:animated];
   
   if ([self.navigationController.viewControllers indexOfObject:self] == NSNotFound) {
+    
     EDHFinderListViewController *parentController = (EDHFinderListViewController *)self.navigationController.viewControllers.lastObject;
+    
     EDHFinderItem *item = parentController.item;
+    
     if ([self.listDelegate respondsToSelector:@selector(listViewController:didBackToDirectory:)]) {
       [self.listDelegate listViewController:parentController didBackToDirectory:item];
     }
@@ -113,9 +117,12 @@ typedef NS_ENUM(NSUInteger, EDHFinderListViewControllerCreateType) {
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  
   MGSwipeTableCell* cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+  
   if (!cell) {
     cell = [[MGSwipeTableCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier];
+    
     //cell.accessoryType = UITableViewCellAccessoryDetailButton;
     //cell.tintColor = [EDHFinder sharedFinder].iconColor;
   }
@@ -130,7 +137,9 @@ typedef NS_ENUM(NSUInteger, EDHFinderListViewControllerCreateType) {
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+  
   if (editingStyle == UITableViewCellEditingStyleDelete) {
+    
     EDHFinderItem *item = [self itemAtIndexPath:indexPath];
     
     NSString *title = [NSString stringWithFormat:[EDHUtility localizedString:@"Delete %@" withScope:EDHFinderPodName], item.name];
@@ -159,6 +168,7 @@ typedef NS_ENUM(NSUInteger, EDHFinderListViewControllerCreateType) {
 # pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  
   EDHFinderItem *item = [self itemAtIndexPath:indexPath];
   
   if (item.isDirectory) {
@@ -168,9 +178,30 @@ typedef NS_ENUM(NSUInteger, EDHFinderListViewControllerCreateType) {
       [self.listDelegate listViewController:nextController didMoveToDirectory:item];
     }
   } else {
-    if ([self.listDelegate respondsToSelector:@selector(listViewController:didSelectFile:)]) {
-      [self.listDelegate listViewController:self didSelectFile:item];
+
+    NSLog(@"mime %@",item.name);
+    
+    if ([item.mimeType isEqualToString:@"application/zip"]){
+      
+      NSError *zipError = nil;
+      NSString *documentsDirectory = [item.path stringByDeletingLastPathComponent];
+      [SSZipArchive unzipFileAtPath:item.path toDestination:documentsDirectory overwrite:YES password:nil error:&zipError];
+      
+      if( zipError ){
+        NSLog(@"[GameVC] Something went wrong while unzipping: %@", zipError.debugDescription);
+      }else {
+        NSLog(@"[GameVC] Archive unzipped successfully");
+        [self loadItems];
+      }
+      
+    } else {
+      
+      if ([self.listDelegate respondsToSelector:@selector(listViewController:didSelectFile:)]) {
+        [self.listDelegate listViewController:self didSelectFile:item];
+      }
+
     }
+    
   }
 }
 
@@ -271,6 +302,7 @@ typedef NS_ENUM(NSUInteger, EDHFinderListViewControllerCreateType) {
 }
 
 - (void)configureCell:(MGSwipeTableCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+  
   EDHFinderItem *item = [self itemAtIndexPath:indexPath];
   cell.textLabel.text = item.name;
   

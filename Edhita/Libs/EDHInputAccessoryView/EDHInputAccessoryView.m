@@ -102,7 +102,7 @@ static const CGFloat kIconSize = 20.0f;
   [buttons addObject:redoButton];
   
   
-  NSString *strings = @"!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
+  NSString *strings = @"!\"#$%&'()*+,-.<>/=:;?@[\\]^_`{|}~";
   [strings enumerateSubstringsInRange:NSMakeRange(0, strings.length) options:NSStringEnumerationByComposedCharacterSequences usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop) {
     EDHInputAccessoryButton *button = [EDHInputAccessoryButton buttonWithString:substring];
     [buttons addObject:button];
